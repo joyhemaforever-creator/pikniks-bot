@@ -149,8 +149,8 @@ export default function ChatInterface() {
                     >
                         <div
                             className={`max-w-[80%] rounded-2xl p-3 ${msg.sender === "user"
-                                    ? "bg-blue-600 text-white rounded-tr-none"
-                                    : "bg-white text-gray-800 shadow-sm border border-gray-100 rounded-tl-none"
+                                ? "bg-blue-600 text-white rounded-tr-none"
+                                : "bg-white text-gray-800 shadow-sm border border-gray-100 rounded-tl-none"
                                 }`}
                         >
                             <p className="text-sm">{msg.text}</p>
@@ -195,6 +195,27 @@ export default function ChatInterface() {
                                         <MapPin size={12} />
                                         <span>{msg.data.distance}</span>
                                     </div>
+
+                                    {/* Pricing Packages */}
+                                    {msg.data.pricing && msg.data.pricing.length > 0 && (
+                                        <div className="mt-3 mb-3">
+                                            <h4 className="text-xs font-bold text-gray-800 mb-2">Packages & Pricing:</h4>
+                                            <div className="space-y-2">
+                                                {msg.data.pricing.map((pkg: any, idx: number) => (
+                                                    <div key={idx} className="bg-white p-2 rounded border border-gray-100">
+                                                        <div className="flex justify-between items-start">
+                                                            <span className="text-xs font-medium text-gray-800">{pkg.name}</span>
+                                                            <span className="text-xs font-bold text-green-600">{pkg.price}</span>
+                                                        </div>
+                                                        {pkg.details && (
+                                                            <p className="text-[10px] text-gray-500 mt-1">{pkg.details}</p>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
                                     {msg.data.link && (
                                         <a
                                             href={msg.data.link}

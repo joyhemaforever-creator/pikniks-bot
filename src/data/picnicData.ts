@@ -1,4 +1,10 @@
-export type Category = "Car Trips" | "Adventure Camps" | "Waterparks" | "Pilgrimage" | "Bus Trips";
+export type Category = "Car Trips" | "Adventure Camps" | "Waterparks" | "Pilgrimage" | "Bus Trips" | "Heritage" | "Kids" | "Gardens" | "Museums" | "Food" | "Amusement Parks";
+
+export interface PricingPackage {
+  name: string;
+  price: string;
+  details?: string;
+}
 
 export interface Place {
   id: string;
@@ -7,6 +13,7 @@ export interface Place {
   description: string;
   distance?: string;
   link?: string;
+  pricing?: PricingPackage[];
 }
 
 export const categories: Category[] = [
@@ -15,6 +22,12 @@ export const categories: Category[] = [
   "Waterparks",
   "Pilgrimage",
   "Bus Trips",
+  "Heritage",
+  "Kids",
+  "Gardens",
+  "Museums",
+  "Food",
+  "Amusement Parks"
 ];
 
 export const places: Place[] = [
@@ -25,7 +38,12 @@ export const places: Place[] = [
     category: "Car Trips",
     description: "Visit the Sun Temple, the UNESCO World Heritage Stepwell, and the architectural marvels of Sidhpur.",
     distance: "100-125 km",
-    link: "http://pikniks.in/one-day-picnic-places-around-ahmedabad.html"
+    link: "https://myahmedabad.blog/portfolio/modhera-patan-sidhpur/",
+    pricing: [
+      { name: "Sedan (Max 4)", price: "₹ 4,300/Car" },
+      { name: "Ertiga (Max 6)", price: "₹ 5,300/Car" },
+      { name: "Crysta (Max 7)", price: "₹ 7,400/Car" }
+    ]
   },
   {
     id: "polo-forest",
@@ -33,7 +51,13 @@ export const places: Place[] = [
     category: "Car Trips",
     description: "Ancient ruins in a lush forest. Ideal for trekking and nature lovers.",
     distance: "150 km",
-    link: "http://pikniks.in/one-day-picnic-places-around-ahmedabad.html"
+    link: "https://myahmedabad.blog/portfolio/polo-forest-from-ahmedabad-one-day-tour/",
+    pricing: [
+      { name: "Sedan (Max 4)", price: "₹ 4,400/Car" },
+      { name: "Ertiga (Max 6)", price: "₹ 5,600/Car" },
+      { name: "Crysta (Max 7)", price: "₹ 6,700/Car" },
+      { name: "With Food (Adult)", price: "₹ 850-1000/Person", details: "Breakfast to Hi-Tea/Dinner" }
+    ]
   },
   {
     id: "statue-of-unity",
@@ -41,15 +65,106 @@ export const places: Place[] = [
     category: "Car Trips",
     description: "World's tallest statue. A must-visit modern marvel.",
     distance: "200 km",
-    link: "http://pikniks.in/one-day-picnic-places-around-ahmedabad.html"
+    link: "https://myahmedabad.blog/portfolio/statue-of-unity-from-ahmedabad-bus-car/",
+    pricing: [
+      { name: "Sedan (Max 4)", price: "₹ 5,500/Car + Tickets" },
+      { name: "Ertiga (Max 6)", price: "₹ 6,900/Car + Tickets" },
+      { name: "Crysta (Max 7)", price: "₹ 8,800/Car + Tickets" },
+      { name: "Basic Ticket", price: "₹ 380/Adult, ₹ 230/Child" }
+    ]
   },
   {
-    id: "lothal-velavadar",
-    name: "Lothal & Velavadar",
+    id: "nalsarovar",
+    name: "Nalsarovar Bird Sanctuary",
     category: "Car Trips",
-    description: "Harappan archaeological site and Blackbuck Sanctuary.",
-    distance: "80-150 km",
-    link: "http://pikniks.in/one-day-picnic-places-around-ahmedabad.html"
+    description: "Largest wetland bird sanctuary in Gujarat. Boating and bird watching.",
+    distance: "64 km",
+    link: "https://myahmedabad.blog/portfolio/nalsarovar-varnindra-dham-little-rann-of-kutchh/",
+    pricing: [
+      { name: "Sedan (Max 4)", price: "₹ 3,700/Car" },
+      { name: "Ertiga (Max 6)", price: "₹ 4,600/Car" },
+      { name: "Crysta (Max 7)", price: "₹ 5,700/Car" },
+      { name: "Boating", price: "₹ 1,800-2,000/Boat (Max 6)" }
+    ]
+  },
+  {
+    id: "velavadar-blackbuck",
+    name: "Velavadar Blackbuck National Park",
+    category: "Car Trips",
+    description: "Grassland national park famous for Blackbucks and Wolves.",
+    distance: "145 km",
+    link: "https://myahmedabad.blog/portfolio/velavadar-blackbuck-national-park/",
+    pricing: [
+      { name: "Sedan (Max 4)", price: "₹ 4,000/Car" },
+      { name: "Ertiga (Max 6)", price: "₹ 5,000/Car" },
+      { name: "Crysta (Max 7)", price: "₹ 6,400/Car" },
+      { name: "Safari (1-1.5 hrs)", price: "₹ 2,000 + Entry Fees" }
+    ]
+  },
+  {
+    id: "ahmedabad-sightseeing",
+    name: "Ahmedabad Sightseeing (Darshan)",
+    category: "Car Trips",
+    description: "Full day sightseeing of Heritage City Ahmedabad including Akshardham.",
+    distance: "Local",
+    link: "https://myahmedabad.blog/portfolio/ahmedabad-akshardham-one-day-tour/",
+    pricing: [
+      { name: "Sedan (Max 4)", price: "₹ 4,000/Car" },
+      { name: "Ertiga (Max 6)", price: "₹ 4,600/Car" },
+      { name: "Crysta (Max 7)", price: "₹ 5,800/Car" }
+    ]
+  },
+  {
+    id: "taranga-dharoi-vadnagar",
+    name: "Taranga Hill, Dharoi Dam, Vadnagar",
+    category: "Car Trips",
+    description: "Historical and scenic trip covering Jain temples, Dam and Heritage town Vadnagar.",
+    distance: "140 km",
+    link: "https://myahmedabad.blog/portfolio/tarangahill-dharoi-vadnagar/",
+    pricing: [
+      { name: "Sedan (Max 4)", price: "₹ 4,000/Car" },
+      { name: "Ertiga (Max 6)", price: "₹ 5,000/Car" },
+      { name: "Crysta (Max 7)", price: "₹ 6,400/Car" }
+    ]
+  },
+  {
+    id: "pavagadh-jambughoda",
+    name: "Pavagadh, Champaner & Jambughoda",
+    category: "Car Trips",
+    description: "Pilgrimage to Kalika Mata, UNESCO Heritage Site Champaner, and Jambughoda forest.",
+    distance: "150 km",
+    link: "https://myahmedabad.blog/portfolio/pavagadh-jambughoda-hathanimata-waterfall/",
+    pricing: [
+      { name: "Sedan (Max 4)", price: "₹ 4,500/Car" },
+      { name: "Ertiga (Max 6)", price: "₹ 5,500/Car" },
+      { name: "Crysta (Max 7)", price: "₹ 7,000/Car" }
+    ]
+  },
+  {
+    id: "balasinor-dinosaur",
+    name: "Balasinor Dinosaur Fossil Park",
+    category: "Car Trips",
+    description: "India's Jurassic Park. Visit the Fossil Park and Museum.",
+    distance: "100 km",
+    link: "https://myahmedabad.blog/portfolio/balasinor-dinosaur-fossil-park-one-day-tour/",
+    pricing: [
+      { name: "Sedan (Max 4)", price: "₹ 3,900/Car" },
+      { name: "Ertiga (Max 6)", price: "₹ 4,900/Car" },
+      { name: "Crysta (Max 7)", price: "₹ 6,200/Car" },
+      { name: "Museum Entry", price: "₹ 500/Adult (Approx)" }
+    ]
+  },
+  {
+    id: "jessore-sloth-bear",
+    name: "Jessore Sloth Bear Sanctuary",
+    category: "Car Trips",
+    description: "Trekking and wildlife sanctuary famous for Sloth Bears.",
+    distance: "180 km",
+    link: "https://myahmedabad.blog/portfolio/jessore-sloth-bear-sanctuary-one-day-trip/",
+    pricing: [
+      { name: "Sedan (Max 4)", price: "₹ 4,800/Car" },
+      { name: "Ertiga (Max 6)", price: "₹ 6,000/Car" }
+    ]
   },
   {
     id: "idar-gadh",
@@ -57,22 +172,6 @@ export const places: Place[] = [
     category: "Car Trips",
     description: "Historical fort on a hill, great for climbing and views.",
     distance: "120 km",
-    link: "http://pikniks.in/one-day-picnic-places-around-ahmedabad.html"
-  },
-  {
-    id: "vadodara-sindhrot",
-    name: "Vadodara & Sindhrot",
-    category: "Car Trips",
-    description: "Visit Vadodara city, Sindhrot check dam, and the giant Baobab tree.",
-    distance: "120 km",
-    link: "http://pikniks.in/one-day-picnic-places-around-ahmedabad.html"
-  },
-  {
-    id: "pariyej-khambhat",
-    name: "Pariyej & Khambhat",
-    category: "Car Trips",
-    description: "Wetland for bird watching, historical port city of Khambhat, and Sikotar Mata Mandir.",
-    distance: "100 km",
     link: "http://pikniks.in/one-day-picnic-places-around-ahmedabad.html"
   },
   {
@@ -91,23 +190,12 @@ export const places: Place[] = [
     category: "Adventure Camps",
     description: "Camping in Bakor with trekking and waterfall visits.",
     distance: "150 km",
-    link: "http://pikniks.in/bakor-campsites.html"
-  },
-  {
-    id: "bakor-mahuvan",
-    name: "Bakor - Mahuvan Farm",
-    category: "Adventure Camps",
-    description: "Farm stay and camping experience in Bakor.",
-    distance: "150 km",
-    link: "http://pikniks.in/bakor-campsites.html"
-  },
-  {
-    id: "bakor-nature",
-    name: "Bakor Nature Camp",
-    category: "Adventure Camps",
-    description: "Nature camp experience in the woods of Bakor.",
-    distance: "150 km",
-    link: "http://pikniks.in/bakor-campsites.html"
+    link: "http://pikniks.in/bakor-campsites.html",
+    pricing: [
+      { name: "One Day Picnic", price: "₹ 900/Adult, ₹ 600/Child", details: "Breakfast, Lunch, Hi-Tea, Dinner, Activities" },
+      { name: "Overnight (Non-AC)", price: "₹ 1,400/Adult, ₹ 980/Child", details: "All meals + Night stay" },
+      { name: "Overnight (AC)", price: "₹ 1,700/Adult, ₹ 1,100/Child", details: "All meals + Night stay in AC room" }
+    ]
   },
   {
     id: "orsang-camp",
@@ -115,7 +203,12 @@ export const places: Place[] = [
     category: "Adventure Camps",
     description: "Adventure camp with zipline and other activities.",
     distance: "175 km",
-    link: "http://pikniks.in/one-day-picnic-places-around-ahmedabad.html"
+    link: "https://myahmedabad.blog/portfolio/orsang-camp-one-day-picnic-from-ahmedabad/",
+    pricing: [
+      { name: "Falcon (No Dinner)", price: "₹ 1,200/Adult, ₹ 800/Child" },
+      { name: "Finch (With Dinner)", price: "₹ 1,450/Adult, ₹ 1,000/Child" },
+      { name: "Car Only (Sedan)", price: "₹ 4,700" }
+    ]
   },
   {
     id: "camp-dilly",
@@ -131,17 +224,22 @@ export const places: Place[] = [
     category: "Adventure Camps",
     description: "Eco-tourism campsite.",
     distance: "150 km",
-    link: "http://pikniks.in/one-day-picnic-places-around-ahmedabad.html"
+    link: "https://myahmedabad.blog/portfolio/devs-camp-one-day-picnic-from-ahmedabad/"
   },
 
   // Waterparks
   {
-    id: "tirupati-rushivan",
-    name: "Tirupati Rushivan",
-    category: "Waterparks",
-    description: "Adventure park and waterpark.",
-    distance: "80 km",
-    link: "http://pikniks.in/all-waterparks-around-ahmedabad.html"
+    id: "aatapi-wonderland",
+    name: "Aatapi Wonderland",
+    category: "Amusement Parks",
+    description: "Theme park with rides, waterpark, and laser show near Vadodara.",
+    distance: "135 km",
+    link: "https://myahmedabad.blog/aatapi-wonderland-park-ajwa-vadodara/",
+    pricing: [
+      { name: "Gold Package", price: "₹ 1,000/Adult, ₹ 700/Child", details: "All Rides" },
+      { name: "Fast Track", price: "₹ 1,900/Adult, ₹ 1,300/Child" },
+      { name: "Park Entry", price: "₹ 55/Person" }
+    ]
   },
   {
     id: "swapna-shrushti",
@@ -149,14 +247,6 @@ export const places: Place[] = [
     category: "Waterparks",
     description: "Famous waterpark with village theme.",
     distance: "80 km",
-    link: "http://pikniks.in/all-waterparks-around-ahmedabad.html"
-  },
-  {
-    id: "bliss-aqua",
-    name: "Bliss Aqua World",
-    category: "Waterparks",
-    description: "Modern waterpark near Mehsana.",
-    distance: "85 km",
     link: "http://pikniks.in/all-waterparks-around-ahmedabad.html"
   },
   {
@@ -168,43 +258,11 @@ export const places: Place[] = [
     link: "http://pikniks.in/all-waterparks-around-ahmedabad.html"
   },
   {
-    id: "7s-waterpark",
-    name: "7s Waterpark",
+    id: "bliss-aqua",
+    name: "Bliss Aqua World",
     category: "Waterparks",
-    description: "Waterpark with various slides.",
-    distance: "35 km",
-    link: "http://pikniks.in/all-waterparks-around-ahmedabad.html"
-  },
-  {
-    id: "suswa",
-    name: "Suswa Waterpark",
-    category: "Waterparks",
-    description: "Fun waterpark for family.",
-    distance: "100 km",
-    link: "http://pikniks.in/all-waterparks-around-ahmedabad.html"
-  },
-  {
-    id: "aqualand",
-    name: "Aqualand Waterpark",
-    category: "Waterparks",
-    description: "Waterpark attractions.",
-    distance: "100 km",
-    link: "http://pikniks.in/all-waterparks-around-ahmedabad.html"
-  },
-  {
-    id: "waterville",
-    name: "Water Ville Waterpark",
-    category: "Waterparks",
-    description: "Waterpark in Himmatnagar.",
+    description: "Modern waterpark near Mehsana.",
     distance: "85 km",
-    link: "http://pikniks.in/all-waterparks-around-ahmedabad.html"
-  },
-  {
-    id: "shree-ganesha",
-    name: "Shree Ganesha Fun World",
-    category: "Waterparks",
-    description: "Adventure and waterpark.",
-    distance: "60 km",
     link: "http://pikniks.in/all-waterparks-around-ahmedabad.html"
   },
   {
@@ -218,27 +276,36 @@ export const places: Place[] = [
 
   // Pilgrimage
   {
+    id: "koliyak-nishkalank",
+    name: "Koliyak Nishkalank Mahadev",
+    category: "Pilgrimage",
+    description: "Temple in the sea, visible only during low tide.",
+    distance: "220 km",
+    link: "https://myahmedabad.blog/portfolio/koliyak-nishkalank-mahadev-khodiyar-mandir-one-day-trip/",
+    pricing: [
+      { name: "Sedan (Max 4)", price: "₹ 5,500/Car" },
+      { name: "Ertiga (Max 6)", price: "₹ 6,800/Car" },
+      { name: "Crysta (Max 7)", price: "₹ 8,900/Car" }
+    ]
+  },
+  {
+    id: "poshina-safari",
+    name: "Poshina Jeep Safari & Ambaji",
+    category: "Pilgrimage",
+    description: "Jeep safari in Poshina and visit to Ambaji Temple.",
+    distance: "190 km",
+    link: "https://myahmedabad.blog/portfolio/one-day-trip-to-poshina-with-poshina-safari-near-ambaji/",
+    pricing: [
+      { name: "Jeep Safari", price: "₹ 2,800-3,000/Jeep" },
+      { name: "Car Package (Sedan)", price: "₹ 7,900 (Inc. Safari)" }
+    ]
+  },
+  {
     id: "ambaji-poshina",
     name: "Ambaji & Poshina",
     category: "Pilgrimage",
     description: "Visit the famous Ambaji temple and Poshina.",
     distance: "190 km",
-    link: "http://pikniks.in/one-day-picnic-places-around-ahmedabad.html"
-  },
-  {
-    id: "mahudi-sapteshwar",
-    name: "Mahudi & Sapteshwar",
-    category: "Pilgrimage",
-    description: "Ghantakarna Mahavir temple at Mahudi and Sapteshwar Mahadev.",
-    distance: "150 km",
-    link: "http://pikniks.in/one-day-picnic-places-around-ahmedabad.html"
-  },
-  {
-    id: "shamlaji-meshwo",
-    name: "Shamlaji & Meshwo Dam",
-    category: "Pilgrimage",
-    description: "Famous Vishnu temple at Shamlaji.",
-    distance: "150 km",
     link: "http://pikniks.in/one-day-picnic-places-around-ahmedabad.html"
   },
   {
@@ -258,5 +325,131 @@ export const places: Place[] = [
     description: "Special bus tours available on Sundays. Please contact for current schedule.",
     distance: "Varies",
     link: "http://pikniks.in"
+  },
+
+  // Heritage
+  {
+    id: "gandhi-ashram",
+    name: "Gandhi Ashram",
+    category: "Heritage",
+    description: "Historical residence of Mahatma Gandhi.",
+    distance: "In Ahmedabad",
+    link: "https://myahmedabad.blog/"
+  },
+  {
+    id: "adalaj-stepwell",
+    name: "Adalaj Stepwell",
+    category: "Heritage",
+    description: "A unique Hindu 'water building' and a fine example of Indian architecture.",
+    distance: "In Ahmedabad",
+    link: "https://myahmedabad.blog/"
+  },
+  {
+    id: "sidi-saiyad",
+    name: "Sidi Saiyad Mosque",
+    category: "Heritage",
+    description: "Famous for its intricate stone lattice work (Jali).",
+    distance: "In Ahmedabad",
+    link: "https://myahmedabad.blog/"
+  },
+
+  // Kids
+  {
+    id: "sundarvan-zoo",
+    name: "Sundarvan Mini Zoo",
+    category: "Kids",
+    description: "Nature discovery centre and mini zoo. Snake shows on Sundays.",
+    distance: "In Ahmedabad",
+    link: "https://myahmedabad.blog/sundarvan-ahmedabad-timing-things-to-do/",
+    pricing: [
+      { name: "Adult", price: "₹ 70" },
+      { name: "Child", price: "₹ 50" }
+    ]
+  },
+  {
+    id: "science-city",
+    name: "Gujarat Science City",
+    category: "Kids",
+    description: "Science education and entertainment center with IMAX 3D theatre.",
+    distance: "In Ahmedabad",
+    link: "https://myahmedabad.blog/inside-ahmedabad-places-within-20-kms/gujarat-science-city/"
+  },
+  {
+    id: "nadabet",
+    name: "Nadabet Indo-Pak Border",
+    category: "Kids",
+    description: "Visit the border, watch the parade, and enjoy adventure activities.",
+    distance: "240 km",
+    link: "https://myahmedabad.blog/portfolio/one-day-trip-to-nadabet-from-ahmedabad/",
+    pricing: [
+      { name: "Entry Fee", price: "₹ 100/Adult, ₹ 50/Child" },
+      { name: "Adventure Activities", price: "Varies (₹ 100 - ₹ 375)" }
+    ]
+  },
+
+  // Gardens
+  {
+    id: "zen-garden",
+    name: "Zen Garden",
+    category: "Gardens",
+    description: "A beautiful Japanese style garden at AMA.",
+    distance: "IIM Road, Ahmedabad",
+    link: "https://myahmedabad.blog/2021/07/20/zen-garden-in-ahmedabad/"
+  },
+  {
+    id: "parimal-garden",
+    name: "Parimal Garden",
+    category: "Gardens",
+    description: "Recently renovated beautiful garden in the city center.",
+    distance: "Ellisbridge, Ahmedabad",
+    link: "https://myahmedabad.blog/2023/01/30/parimal-garden/"
+  },
+
+  // Museums
+  {
+    id: "spectra-museum",
+    name: "Spectra Museum",
+    category: "Museums",
+    description: "1st Art and Technology Museum in Ahmedabad.",
+    distance: "Science City Road",
+    link: "https://myahmedabad.blog/spectra-museum-ahmedabad/",
+    pricing: [
+      { name: "Individual", price: "₹ 2,122" },
+      { name: "VIP", price: "₹ 5,450" }
+    ]
+  },
+  {
+    id: "calico-museum",
+    name: "Calico Museum of Textiles",
+    category: "Museums",
+    description: "One of the most celebrated textile museums in the world.",
+    distance: "Shahibaug, Ahmedabad",
+    link: "https://myahmedabad.blog/"
+  },
+  {
+    id: "auto-world",
+    name: "Auto World Vintage Car Museum",
+    category: "Museums",
+    description: "A museum displaying a large collection of vintage cars.",
+    distance: "Kathwada, Ahmedabad",
+    link: "https://myahmedabad.blog/"
+  },
+
+  // Food
+  {
+    id: "manek-chowk",
+    name: "Manek Chowk",
+    category: "Food",
+    description: "Famous night street food market.",
+    distance: "Old City, Ahmedabad",
+    link: "https://myahmedabad.blog/"
+  },
+  {
+    id: "das-khaman",
+    name: "Das Khaman",
+    category: "Food",
+    description: "Famous for its Khaman and other Gujarati snacks.",
+    distance: "Multiple locations",
+    link: "https://myahmedabad.blog/"
   }
 ];
