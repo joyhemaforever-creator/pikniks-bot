@@ -16,6 +16,48 @@ export interface Place {
   pricing?: PricingPackage[];
 }
 
+export interface GeneralInfo {
+  title: string;
+  items: string[];
+  links?: { text: string; url: string }[];
+}
+
+export const generalInfo: GeneralInfo[] = [
+  {
+    title: "Corporate & School Clients",
+    items: [
+      "Unipath Laboratory",
+      "Wipfli",
+      "Saffron formulation pvt ltd",
+      "Indian Airforce - Vadsar",
+      "ISRO Ahmedabad",
+      "Shifa Hospital - Surat",
+      "Contis Pharma",
+      "Ridham Enterprises",
+      "TCI Express",
+      "Institute of Advanced Research - Gandhinagar",
+      "SVP Hospital - Ahmedabad",
+      "Javer Jivan Mehta School - Navsari"
+    ]
+  },
+  {
+    title: "Travel News",
+    items: [
+      "Moon Trails - Glow Garden at Riverfront Opened (July 2025)",
+      "Patang Hotel (Rotating Restaurant) Restarted (Oct 2023)",
+      "Sabarmati Rivercruise (Akshar Cruise) started",
+      "Atal Footbridge opened",
+      "Regional Science Museum & Dinosaur Park at Patan",
+      "Nadabet Parade & Adventure Activities at Indo-Pak Border",
+      "Ambaji Gabbar Laser Show (Daily 7 PM)",
+      "Robotic Cafe at Vastrapur",
+      "Helicopter Ride in Ahmedabad",
+      "Zen Garden at AMA",
+      "Penguins at Science City Aquarium"
+    ]
+  }
+];
+
 export const categories: Category[] = [
   "Car Trips",
   "Adventure Camps",
@@ -63,14 +105,16 @@ export const places: Place[] = [
     id: "statue-of-unity",
     name: "Statue of Unity",
     category: "Car Trips",
-    description: "World's tallest statue. A must-visit modern marvel.",
+    description: "World's tallest statue. A must-visit modern marvel. Includes Viewing Gallery, Valley of Flowers, Laser Show, and Sardar Sarovar Dam.",
     distance: "200 km",
-    link: "https://myahmedabad.blog/portfolio/statue-of-unity-from-ahmedabad-bus-car/",
+    link: "https://pikniks.in/statue-of-unity-from-ahmedabad.html",
     pricing: [
       { name: "Sedan (Max 4)", price: "₹ 5,500/Car + Tickets" },
       { name: "Ertiga (Max 6)", price: "₹ 6,900/Car + Tickets" },
       { name: "Crysta (Max 7)", price: "₹ 8,800/Car + Tickets" },
-      { name: "Basic Ticket", price: "₹ 380/Adult, ₹ 230/Child" }
+      { name: "Basic Ticket", price: "₹ 380/Adult, ₹ 230/Child", details: "Entry, Museum, Valley of Flowers, Laser Show, Bus, Dam" },
+      { name: "Viewing Gallery", price: "₹ 380 + ₹ 400 (Approx)", details: "Includes access to 153m Viewing Gallery" },
+      { name: "Express Ticket", price: "Higher Rate", details: "Skip the queue for Viewing Gallery" }
     ]
   },
   {
